@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<link rel="stylesheet" href="1.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="default.css">
+<link rel="stylesheet" href="override.css">
+<title>Vlabs@NITK-Surathkal</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+* {
+  box-sizing: border-box;
+  font-family:  Arial, Helvetica, sans-serif;
+}
+
+body {
+
+  margin: 0 auto 	;
+  font-family: "Lucida Grande","Lucida Sans Unicode", "Lucida Sans", Verdana,Arial, Helvetica, sans-serif;
+  font-size:20px;
+  font-color:"red";
+      background: #012943;
+vertical-align: baseline;
+    	  
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the content */
+.content {
+  background-color: #ddd;
+  padding: 10px;
+  height: 650px; /* Should be removed. Only for demonstration */
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+button{
+padding:5px;
+font-size:20px;
+}
+.button1:hover {
+  background-color: black;
+  color: white;
+}
+.button2:hover {
+  background-color: black;
+  color: white;
+}
+table, th, td 
+{
+    border: 1px solid black;
+}
+
+</style>
+<img src="logo.jpg" alt="vlab" width="1375" height="100">
+<div class="topnav">
+<a href="1.html">Home</a>
+  <a href="theory.html">Theory</a>
+  <a href="procedure.html">Procedure</a>
+  <a href="eval.html">Evaluate</a>
+  <a href="eval.html">Simulator</a>
+ <a href="1.html">Self Assesment</a>
+ <a href="1.html">Reference</a>
+</div>
+<script src='func.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<div class="content">
+
+
+<p>Enter the amount of adsorbate added </p>
+<form action='/func.js' method="post">
+
+Weight:<input id="w" type="text" name="w">g<br>
+
+<p>Enter the standardization titration value</p>
+
+Titer value:<input id="t" type="text" name="titer">mL<br>
+
+<p>Enter the weight of adsorbent added and titration values in all 4 flasks respectively</p>
+<table>
+  <tr>
+    <th>Flask No.</th>
+    <th>Weight of adsorbent added(g)</th>
+    <th>Titer Value(mL)</th>
+  </tr>
+
+  
+  <tr>
+    <th>1.</th>
+    <td><input id="w1" type="text" style="margin-left:85px;" name="w1"><br><br></td>
+    <td><input id="t1" type="text" name="t1"><br><br></td>
+      </tr>
+	  <tr>
+	  <th>2.</th>
+    <td><input id="w2" type="text" style="margin-left:85px;" name="w2"><br><br></td>
+    <td><input id="t2" type="text" name="t2"><br><br></td>
+      </tr>
+	  <tr>
+	  <th>3.</th>
+    <td><input id="w3" type="text" style="margin-left:85px;" name="w3"><br><br></td>
+    <td><input id="t3" type="text" name="t3"><br><br></td>
+      </tr>
+	  <tr>
+	  <th>4.</th>
+    <td><input id="w4" type="text" style="margin-left:85px;" name="w4"><br><br></td>
+    <td><input id="t4" type="text" name="t4"><br><br></td>
+      </tr>
+	  <tr>
+	  <th>5.</th>
+    <td><input id="w5" type="text" style="margin-left:85px;" name="w5"><br><br></td>
+    <td><input id="t5" type="text" name="t5"><br><br></td>
+</tr>
+</table>
+<br>
+</form>
+
+<button onclick='ha()' >Calculate</button>
+
+</div>
+
+<div class="footer">
+<img src="vlab1.png" alt="vlab" width="100" height="100">
+  <p id="ans">Footer</p>
+</div>
+</body>
+</html>

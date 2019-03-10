@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+ 
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="default.css">
+<link rel="stylesheet" href="override.css">
+<title>Vlabs@NITK-Surathkal</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  font-family:  Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0 auto 	;
+  font-family: "Lucida Grande","Lucida Sans Unicode", "Lucida Sans", Verdana,Arial, Helvetica, sans-serif;
+  font-size:16px;
+      background: #012943;
+vertical-align: baseline;
+    	  
+}
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+   }
+
+/* Style the topnav links */
+.topnav a {
+  display: inline-block;
+  color: #f2f2f2;
+  font-size:20px;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the content */
+.content {
+
+  background-color: #ddd;
+  padding: 10px;
+  height: 900px;  /*Should be removed. Only for demonstration */
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+</style>
+</head>
+<body onload="here()">
+<img src="logo.jpg" alt="vlab" width="1375" height="100">
+<div class="topnav">
+<a href="1.html">Home</a>
+  <a href="theory.html">Theory</a>
+  <a href="procedure.html">Procedure</a>
+ <a href="eval.html">Evaluate</a>
+ <a href="anim2.html">Simulator</a>
+ <a href="eval.html">Self Assesment</a>
+ <a href="eval.html">Reference</a>
+</div>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/DC6020CD-2C8D-9D47-AAF6-DF298FFA7FB1/main.js" charset="UTF-8"></script>
+	<script src='func.js'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<div class="content">
+
+<span> Normality of NaOH solution obtained from titration = </span>
+<span id='ans'></span>
+<span> N</span>
+<table>
+<tr>
+    <th>Flask No.</th>
+    <th>Weight of adsorbent added(g)</th>
+    <th>V(L/g)</th>
+	<th>Titer Value(mL)</th>
+	<th>C*</th>
+	<th>V*(Co-C*)</th>
+	<th>log(C*)</th>
+	<th>log(V*(Co-C*))</th>
+  </tr>
+  <tr>
+    <td>1.</td>
+    <td id='wt1'><br><br></td>
+    <td id="V1"><br><br></td>
+	<td id="tr1"><br><br></td>
+	<td id="c1"><br><br></td>
+	<td id="vc1"><br><br></td>
+	<td id="lc1"><br><br></td>
+	<td id="lvc1"><br><br></td>
+      </tr>
+	  <tr>
+    <td>2.</td>
+    <td id="wt2"><br><br></td>
+    <td id="V2"><br><br></td>
+	<td id="tr2"><br><br></td>
+	<td id="c2"><br><br></td>
+	<td id="vc2"><br><br></td>
+	<td id="lc2"><br><br></td>
+	<td id="lvc2"><br><br></td>
+      </tr>
+	  <tr>
+    <td>3.</td>
+    <td id="wt3"><br><br></td>
+    <td id="V3"><br><br></td>
+	<td id="tr3"><br><br></td>
+	<td id="c3"><br><br></td>
+	<td id="vc3"><br><br></td>
+	<td id="lc3"><br><br></td>
+	<td id="lvc3"><br><br></td>
+      </tr>
+	  <tr>
+    <td>4.</td>
+    <td id="wt4"><br><br></td>
+    <td id="V4"><br><br></td>
+	<td id="tr4"><br><br></td>
+	<td id="c4"><br><br></td>
+	<td id="vc4"><br><br></td>
+	<td id="lc4"><br><br></td>
+	<td id="lvc4"><br><br></td>
+      </tr>
+	  <tr>
+    <td>5.</td>
+    <td id="wt5"><br><br></td>
+    <td id="V5"><br><br></td>
+	<td id="tr5"><br><br></td>
+	<td id="c5"><br><br></td>
+	<td id="vc5"><br><br></td>
+	<td id="lc5"><br><br></td>
+	<td id="lvc5"><br><br></td>
+      </tr>
+</table>
+<div style="width:900px;">
+<canvas id="canvas1"></canvas><br>
+</div>
+<div style="background-color=blue">
+<p>RESULTS:</p>
+<p>The Freundlich Isotherm constants are:</p>
+<p>k=
+<p id="k">
+<p>n=
+<p id="n"></p>
+</div>
+</div>
+    
+
+
+</body>
+
+</html>
