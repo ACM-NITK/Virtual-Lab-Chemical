@@ -1,0 +1,164 @@
+<style>
+
+.beaker {
+
+  background-color: #36C1D6;
+
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top:300px;
+  left:250px;
+  transition: background-color 0.7s ease;
+
+}
+.squared {
+    background-color: #d3d3d3;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 0;
+
+
+}
+
+#burette{
+  position: absolute;
+  top:0px;
+  left:225px;
+  height:200px; 
+  width:auto
+}
+
+.drop {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  left:291px;
+  background-color: #36C1D6;
+  border-radius: 50% 1px 50% 50%;
+  -webkit-transform: rotate(-45deg);  
+  -webkit-animation: drip 0.4s linear;
+}
+ .drop:nth-child(2) {  
+  border-radius: 50%;
+  -webkit-transform: rotate(0deg);
+} 
+
+   
+@-webkit-keyframes drip {
+ 0% {
+    width: 0px;
+    height: 0px;
+    top: 180px;
+  }
+  50% {
+    width: 10px;
+    height: 10px;
+    top: 250px;
+  }
+  100% { 
+    width: 10px;
+    height: 10px; 
+    top: 390px;
+  }
+}
+ 
+
+
+
+
+
+</style>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        </head>
+        
+<body>
+
+    <div class="alert alert-success fade out" id="bsalert">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Well done!</strong> Titration point reached!
+      </div>
+
+  </div>
+    <div class="container">
+              <img src="burette.png" style="" id="burette">
+              <div class="experiment">
+                  <div class="drop"></div>
+                  <div class="drop"></div>
+              </div>
+              <div class="beaker">
+                  <div class="squared"></div>
+                </div>
+                <label>Increment: </label>
+                <input type="number" max="5" value="5" id="increment" class="form-control" style="width: 100px"><br>
+                <div class="badge badge-primary">
+                  <span class="indicator badge badge-primary">0</span><span>mL</span>
+                </div>
+                  <br>
+                  <br>
+                <button id="drop" class="btn btn-success">Drop</button>
+        </div>
+
+
+
+  <div class="container">
+    <div class="row">
+    <div class="col-md-6 col-lg-6">
+        
+  </div>
+
+    
+  </div>
+</div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+  var point = 25;
+  function toggleAlert(){
+    $(".alert").toggleClass('in out'); 
+    return false; // Keep close.bs.alert event from removing from DOM
+}
+
+
+    $( document ).ready(function() {
+      $('#bsalert').on('close.bs.alert', toggleAlert)
+
+      $("#drop").on( "click", function() {
+        var drop = $('.experiment').clone();
+         $('.experiment').remove();
+         $('body').append(drop);
+         setTimeout(
+        function() 
+        {
+          $(".squared").height( $(".squared").height()-$("#increment").val() )
+          console.log($(".squared").height())
+          console.log($(".beaker").height())
+
+          $(".indicator").text($(".beaker").height()-$(".squared").height())
+          if($(".beaker").height()-$(".squared").height() >= point)
+            {
+              $(".beaker").css("background-color","purple");
+              toggleAlert();
+
+              $("#drop").off('click').attr("disabled", true);
+
+            }
+
+        }, 400);
+        
+
+
+    })
+    });
+</script>
